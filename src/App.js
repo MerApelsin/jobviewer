@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-//main flow + callbacks?
+//main flow + callbacks + router?
 function App() {
   return (
     <div className="App">
