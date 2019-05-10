@@ -12,13 +12,7 @@ class DataHandler{
     constructor()
     {
         this.data = {};
-      //firebase.initializeApp(config);
-      //this.auth = firebase.auth();
     }
-
-    /*signIn = (email,password) => {
-      return this.auth.signInWithEmailAndPassword(email,password);
-    }*/
 
     fetchData = async () => {
       let respData = [];
@@ -26,15 +20,13 @@ class DataHandler{
             //const response = await fetch('https://feed.jobylon.com/feeds/7d7e6fd12c614aa5af3624b06f7a74b8/?format=json');
             //const data =  await response.json();
             respData = tempFakeJson;
-            //let fetchedData = await JSON.parse(rawData);
-            //console.log(fetchedData);
         }
-        catch(err){
+        catch(err) {
             return err;
         }
-        //6535
+
         this.formatData(respData);
-        //console.log('outside try ', respData);  
+        
     }
     
     formatData = (rawData) => {
@@ -42,9 +34,9 @@ class DataHandler{
       for (let object in rawData) 
       {
         let id = rawData[object].id;
-        console.log(id);
+        
         let tempObj = {};
-        tempObj = { id: id,
+        tempObj = {
           data: {
           short:{
             id: id,
@@ -72,8 +64,8 @@ class DataHandler{
                 phone: rawData[object].contact.phone,
                 email: rawData[object].contact.email
               },
-              departments: rawData[object].departments,
               workDetails: {
+                departments: rawData[object].departments,
                 employmentType: rawData[object].employment_type,
                 exp: rawData[object].experience,
                 workDesc: {__html: rawData[object].descr},
@@ -89,23 +81,27 @@ class DataHandler{
             }
           }
         }
-        console.log(tempObj);
-        formatedObj = {...formatedObj, tempObj};
+        formatedObj[rawData[object].id] = tempObj;
       }
-      console.log(formatedObj);
-      //this.data = formatedObj;
+      this.data = formatedObj;
+      
+    }
+
+    getShortAds = () =>{
+        let shortAds = []
+        for (let ads in this.data) 
+        {
+          shortAds[shortAds.length] = this.data[ads].data.short;
+        }
+
+        return shortAds;
+    }
+
+    getFullAd = (id) => {
+        let foundKey = Object.keys(this.data).find(key => this.data[key].data.full.id === id);
+        return this.data[foundKey].data.full;
     }
   }
-  /*
-  function resolveAfter2Seconds() {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve('resolved');
-    }, 2000);
-  });
-}
-
-  */
 
   const dataHandler = new DataHandler();
 
