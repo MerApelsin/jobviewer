@@ -60,7 +60,7 @@ class DataHandler{
               id: id,
               company: {
                 coverImg: rawData[object].company.cover,
-                desc: {__html: rawData[object].company.desc},
+                desc: {__html: rawData[object].company.descr},
                 industry: rawData[object].industry,
                 logo: rawData[object].company.logo,
                 name: rawData[object].company.name,
@@ -73,10 +73,10 @@ class DataHandler{
                 email: rawData[object].contact.email
               },
               departments: rawData[object].departments,
-              workDesc: {__html: rawData[object].desc},
               workDetails: {
                 employmentType: rawData[object].employment_type,
                 exp: rawData[object].experience,
+                workDesc: {__html: rawData[object].descr},
                 startDate: rawData[object].from_date,
                 workCategory: rawData[object].function,
                 location: rawData[object].locations,
@@ -89,7 +89,8 @@ class DataHandler{
             }
           }
         }
-        formatedObj = Object.assign(tempObj);
+        console.log(tempObj);
+        formatedObj = {...formatedObj, tempObj};
       }
       console.log(formatedObj);
       //this.data = formatedObj;
