@@ -9,8 +9,8 @@ class App extends React.Component {
     status: ''
   }
 
-  componentDidMount() {
-     console.log(DataHandler.fetchData());
+  async componentDidMount() {
+     let a = await DataHandler.fetchData();
   }
   
   render(){
