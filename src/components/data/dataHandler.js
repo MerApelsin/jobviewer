@@ -8,9 +8,13 @@
 
 //get stuff for 'ad'
 import tempFakeJson from './tempFakeJson.js';
+
 class DataHandler{
     constructor()
     {
+        this.getFullAd = this.getFullAd.bind(this);
+        this.getShortAds = this.getShortAds.bind(this);
+        this.hasData = this.hasData.bind(this);
         this.data = {};
     }
 
@@ -78,7 +82,7 @@ class DataHandler{
                 workDesc: {__html: rawData[object].descr},
                 startDate: rawData[object].from_date,
                 workCategory: rawData[object].function,
-                location: rawData[object].locations,
+                location: {...tempLocationObj},
                 skills: {__html: rawData[object].skills},
                 slug: rawData[object].slug,
                 workTitle: rawData[object].title,
@@ -93,7 +97,7 @@ class DataHandler{
       this.data = formatedObj;
       
     }
-
+   
     getShortAds = () =>{
         let shortAds = []
         for (let ads in this.data) 
@@ -104,9 +108,32 @@ class DataHandler{
         return shortAds;
     }
 
-    getFullAd = (id) => {
-        let foundKey = Object.keys(this.data).find(key => this.data[key].data.full.id === id);
-        return this.data[foundKey].data.full;
+    hasData = () => {
+        for(let key in this.data) {
+            if(this.data.hasOwnProperty(key))
+                return true;
+        }
+        return false;
+    }
+
+    getFullAd = async (id) => {
+        let fullAd = {};
+        if(this.hasData()){
+            const convertedId = parseInt(id, 10)
+            let foundKey = Object.keys(this.data).find(key => this.data[key].data.full.id === convertedId);
+            fullAd = this.data[foundKey].data.full;
+        }
+        else {
+            try{
+                await this.fetchData();
+                fullAd = await this.getFullAd(id);
+            }
+            catch(err){
+                return { error: `Something happened! ${err}`};
+            }
+        }   
+
+        return fullAd;
     }
   }
 

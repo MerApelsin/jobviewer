@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import DataHandler from './data/dataHandler.js';
 import ShortCard from './gui/shortCard.js';
+import style from './home.module.css';
 
 //main flow + callbacks + router?
 class Home extends React.Component {
@@ -22,7 +23,7 @@ class Home extends React.Component {
   render(){
       const shortAdCards = this.state.shortAds.map(ad => <ShortCard adinfo={ad}/>);
     return (
-      <div className="App">
+      <div className={style.home}>
         {shortAdCards}
       </div>
     );

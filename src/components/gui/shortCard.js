@@ -11,7 +11,6 @@ import style from './shortCard.module.css';
 
 const ShortCard = (props) => {
     const {id, company, employmentType, workCategory, jobTitle, location} = props.adinfo;
-    console.log(location);
     return(
     <Container className={style.container}>
         <Row>
