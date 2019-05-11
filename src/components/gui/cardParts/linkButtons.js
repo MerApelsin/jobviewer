@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-const Details = (props) => {
+const LinkButtons = (props) => {
     return (
         <div>
 
@@ -11,4 +12,4 @@ const Details = (props) => {
     )
 }
 
-export default Details;
+export default LinkButtons;

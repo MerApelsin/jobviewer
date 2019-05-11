@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-const Details = (props) => {
+const CompanyDesc = (props) => {
     return (
         <div>
 
@@ -11,4 +11,4 @@ const Details = (props) => {
     )
 }
 
-export default Details;
+export default CompanyDesc;
