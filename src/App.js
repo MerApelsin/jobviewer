@@ -1,31 +1,20 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-import DataHandler from './components/data/dataHandler.js';
-import ShortCard from './components/gui/shortCard.js';
+import Home from './components/home.js';
+import FullCard from './components/gui/fullCard.js';
 
 //main flow + callbacks + router?
 class App extends React.Component {
-  state = {
-    hasFetched: false,
-    status: '',
-    shortAds: [],
-  }
-
-  async componentDidMount() {
-        await DataHandler.fetchData(this.finishedFetch);
-        this.setState({shortAds: DataHandler.getShortAds()}, () => {this.setState({hasFetched: true});});
-    }
-  
-    finishedFetch = () => {
-        this.setState({hasFetched: true});
-    }
-
   render(){
-      const shortAdCards = this.state.shortAds.map(ad => <ShortCard adinfo={ad}/>);
+      
     return (
       <div className="App">
-        <p>{(this.state.hasFetched).toString()}</p>
-        {shortAdCards}
+        <Switch>
+            <Route exact path="/ads/:id" component={FullCard} />
+            <Route exact path="/" component={Home}/>
+        </Switch>
       </div>
     );
   }

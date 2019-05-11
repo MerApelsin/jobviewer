@@ -1,0 +1,33 @@
+.container{
+    width: 100%;
+    border: 2px solid black;
+    margin-bottom: 10px;
+}
+.cardContent{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+
+.companyBlock{
+    width: 30%;
+    max-width: 75px;
+    padding: 5px;
+    background-color: blue;
+}
+.companyName{
+    padding: 5px 0;
+    margin: 0;
+    font-size: 1em;
+}
+
+.companyLogo{
+    width: 100%;  
+}
+
+@media (min-width: 768px){
+    .container{
+        width: 768px;
+    }
+    
+}

@@ -36,6 +36,12 @@ class DataHandler{
         let id = rawData[object].id;
         
         let tempObj = {};
+        let tempLocationObj = {};
+
+        tempLocationObj = {
+            ...rawData[object].locations[0].location
+        }
+        
         tempObj = {
           data: {
           short:{
@@ -43,10 +49,11 @@ class DataHandler{
             company: {
               logo: rawData[object].company.logo,
               name: rawData[object].company.name,
-              employmentType: rawData[object].employment_type,
               },
+            employmentType: rawData[object].employment_type,
             workCategory: rawData[object].function,
-            jobTitle: rawData[object].title
+            jobTitle: rawData[object].title,
+            location: {...tempLocationObj},
             },
           full:{
               id: id,
