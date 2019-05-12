@@ -5,6 +5,7 @@ import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
+//React root, has Router wrapper for react-router usage.
 ReactDOM.render(
     <Router>
         <App />

@@ -1,3 +1,22 @@
+
+### Jobviewer - test project for Jobylon
+
+Basic *React* site that uses *react-bootstrap* and *react-router*.
+
+Root component being src/app.js, where react-bootstrap's most action is (aside from linking) that decides what component should be rendered based on url path. 
+
+Then we have src/components/home.js that fetches the data from the API by calling src/components/data/dataHandler.js which fetches -> formats -> stores and then finally returns an array with short adverts for home to map to src/components/gui/shortCard.js components.
+
+These then link to their full versions, which goes by id and matching url with src/components/gui/fullCard.js.
+
+fullCard then uses a bunch of smaller components in the src/components/gui/cardParts to create the full version. 
+
+src/components/data/dataHandler.js 's job is just to fetch and return adverts depending on what's being requested. How this file itself is written gets controlled by what the API can do and what it returns. For example, in the case of no data already fetched if you go directly to a full advert - instead of fetching *all* adverts just fetch 'active' one based on id.
+
+Most time for this projects has gone to styling, which without a styleguide aint the best and so far isn't really all that mobile friendly. Works in Firefox and chrome, and almost completely in Edge!
+
+Leaving most of create-react-app's readme for some commands.
+***
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -11,11 +30,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 

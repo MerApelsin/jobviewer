@@ -19,6 +19,7 @@ class FullCard extends React.Component{
         error: ''
     }
 
+    //fetch 'active' advert data and store it for under-components to use
     async componentDidMount(){   
         const { match: { params } } = this.props;
         const fullAd = await DataHandler.getFullAd(params.id);

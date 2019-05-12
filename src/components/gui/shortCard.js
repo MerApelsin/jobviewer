@@ -31,7 +31,7 @@ const ShortCard = (props) => {
             </Col>
             <Col xs={2}>
                 <div className={style.buttonArea}>
-                    <VisitButton intern={true} url={`/ads/${id}`} text={'Read more'}/>
+                    <VisitButton intern={true} url={`/advert/${id}`} text={'Read more'}/>
                 </div>
             </Col>
         </Row>

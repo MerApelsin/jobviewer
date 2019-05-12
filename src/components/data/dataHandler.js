@@ -1,12 +1,9 @@
 //should handle all data
-
-//fetch data from url and store in state.
-
+//fetch data from url and store in "state".
 //get id:s
 
-//get stuff for 'short card'
-
-//get stuff for 'ad'
+//this import is left to show that I used 'mockdata' to ease the use of API calls to database. 
+//For creating function that extracts and formats data.
 import tempFakeJson from './tempFakeJson.js';
 
 class DataHandler{
@@ -19,18 +16,16 @@ class DataHandler{
     }
 
     fetchData = async () => {
-      let respData = [];
+        let data = '';
         try{
-            //const response = await fetch('https://feed.jobylon.com/feeds/7d7e6fd12c614aa5af3624b06f7a74b8/?format=json');
-            //const data =  await response.json();
-            //respData = data;
-            respData = tempFakeJson;
+            const response = await fetch('https://feed.jobylon.com/feeds/7d7e6fd12c614aa5af3624b06f7a74b8/?format=json');
+            data =  await response.json();
         }
         catch(err) {
             return err;
         }
 
-        this.formatData(respData);
+        this.formatData(data);
         
     }
     
@@ -111,6 +106,7 @@ class DataHandler{
         return shortAds;
     }
 
+    //if user gets url to an advert, check if data has been fetched - true, else - false
     hasData = () => {
         for(let key in this.data) {
             if(this.data.hasOwnProperty(key))
@@ -119,6 +115,7 @@ class DataHandler{
         return false;
     }
 
+    //check data, if it's empty then do a fetch and then try to return the 'active' advert again.
     getFullAd = async (id) => {
         let fullAd = {};
         if(this.hasData()){
@@ -142,7 +139,7 @@ class DataHandler{
 
   const dataHandler = new DataHandler();
 
-  //exponerar bara den faktiskta instansen av firebase vilket gör att andra filer inte kan/ska initisera firebase på flera ställen
+  //export only the actual 'instance' of dataHandler, which lets other files access data/methods without duplicating.
   export default dataHandler;
 
 

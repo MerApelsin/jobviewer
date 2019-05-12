@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import style from './visitButton.module.css';
 
+//returns a 'button' styled link depending on if the link is an internal link or external.
 const VisitButton = (props) =>{
     const { url, intern, text } = props;
     if(intern) {
