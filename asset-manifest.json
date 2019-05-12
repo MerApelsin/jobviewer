@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/jobviewer/static/css/main.66ecdc65.chunk.css",
+    "main.js": "/jobviewer/static/js/main.756dc29e.chunk.js",
+    "main.js.map": "/jobviewer/static/js/main.756dc29e.chunk.js.map",
+    "runtime~main.js": "/jobviewer/static/js/runtime~main.218bf7d4.js",
+    "runtime~main.js.map": "/jobviewer/static/js/runtime~main.218bf7d4.js.map",
+    "static/css/2.22a7d4ef.chunk.css": "/jobviewer/static/css/2.22a7d4ef.chunk.css",
+    "static/js/2.8eee408b.chunk.js": "/jobviewer/static/js/2.8eee408b.chunk.js",
+    "static/js/2.8eee408b.chunk.js.map": "/jobviewer/static/js/2.8eee408b.chunk.js.map",
+    "index.html": "/jobviewer/index.html",
+    "precache-manifest.8c835000b36c0b8d000c17c745aa99d8.js": "/jobviewer/precache-manifest.8c835000b36c0b8d000c17c745aa99d8.js",
+    "service-worker.js": "/jobviewer/service-worker.js",
+    "static/css/2.22a7d4ef.chunk.css.map": "/jobviewer/static/css/2.22a7d4ef.chunk.css.map",
+    "static/css/main.66ecdc65.chunk.css.map": "/jobviewer/static/css/main.66ecdc65.chunk.css.map",
+    "static/media/coverPlaceholder.jpg": "/jobviewer/static/media/coverPlaceholder.4b6cb862.jpg",
+    "static/media/header.module.css": "/jobviewer/static/media/header.ba69dda1.jpg"
+  }
+}
