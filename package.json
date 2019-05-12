@@ -2,7 +2,7 @@
   "name": "jobviewer",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://merapelsin.github.io/jobviewer/",
+  "homepage": "https://merapelsin.github.io/jobviewer/",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "gh-pages": "^2.0.1",
