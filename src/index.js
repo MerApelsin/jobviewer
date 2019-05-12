@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 
 //React root, has Router wrapper for react-router usage.
 ReactDOM.render(
-    <Router basename="/jobviewer">
+    <Router>
         <App />
     </Router>, document.getElementById('root'));
 
