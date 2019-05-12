@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "48908fbf92e413ebf61ce919fb9e3f8a",
+    "revision": "b8e771e91a3201db5a8d18b19320074f",
     "url": "/jobviewer/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/jobviewer/static/css/2.22a7d4ef.chunk.css"
   },
   {
-    "revision": "9c272464acae76732fd9",
+    "revision": "f66faa5bad6ed1fc10c1",
     "url": "/jobviewer/static/css/main.66ecdc65.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/jobviewer/static/js/2.8eee408b.chunk.js"
   },
   {
-    "revision": "9c272464acae76732fd9",
-    "url": "/jobviewer/static/js/main.756dc29e.chunk.js"
+    "revision": "f66faa5bad6ed1fc10c1",
+    "url": "/jobviewer/static/js/main.d9053578.chunk.js"
   },
   {
     "revision": "22e38e532add7499a296",
