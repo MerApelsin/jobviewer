@@ -1,22 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+
+import VisitButton from './../visitButton.js';
+
 import style from './linkButtons.module.css';
 
 const LinkButtons = (props) => {
+    const { urls } = props;
     return (
-        <Container>
+        <Container className={style.container}>
             <Row>
                 <Col>
-                    <p>Look at ad</p>
+                    <VisitButton intern={false} url={urls.adUrl} text={'Look at advert'}/>
                 </Col>
                 <Col>
-                    <Link to='/'>Go back</Link>   
+                    <VisitButton intern={true} url={'/'} text={'Go back'}/> 
                 </Col>
                 <Col>
-                    <p>apply</p>
+                    <VisitButton intern={false} url={urls.applyUrl} text={'Apply'}/>
                 </Col>
             </Row>
         </Container>

@@ -23,6 +23,7 @@ class DataHandler{
         try{
             //const response = await fetch('https://feed.jobylon.com/feeds/7d7e6fd12c614aa5af3624b06f7a74b8/?format=json');
             //const data =  await response.json();
+            //respData = data;
             respData = tempFakeJson;
         }
         catch(err) {
@@ -64,7 +65,7 @@ class DataHandler{
               company: {
                 coverImg: rawData[object].company.cover,
                 desc: {__html: rawData[object].company.descr},
-                industry: rawData[object].industry,
+                industry: rawData[object].company.industry,
                 logo: rawData[object].company.logo,
                 name: rawData[object].company.name,
                 website: rawData[object].company.website
@@ -85,7 +86,9 @@ class DataHandler{
                 location: {...tempLocationObj},
                 skills: {__html: rawData[object].skills},
                 slug: rawData[object].slug,
-                workTitle: rawData[object].title,
+                workTitle: rawData[object].title
+              },
+              urls: {
                 adUrl: rawData[object].urls.ad,
                 applyUrl: rawData[object].urls.apply
               }

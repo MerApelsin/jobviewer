@@ -21,7 +21,7 @@ class Home extends React.Component {
     }
 
   render(){
-      const shortAdCards = this.state.shortAds.map(ad => <ShortCard adinfo={ad}/>);
+      const shortAdCards = this.state.shortAds.map((ad,index) => <ShortCard key={'ad'+index} adinfo={ad}/>);
     return (
       <div className={style.home}>
         {shortAdCards}

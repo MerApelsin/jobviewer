@@ -1,5 +1,16 @@
 .container{
     width: 768px;
-    border: 2px solid blue;
+    border: 2px solid black;
     margin: 20px 0 40px 0;
+    padding: 0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.companySection{
+    margin-bottom: 10px;
+}
+
+.spinnerCol{
+    margin: 20px auto;
 }

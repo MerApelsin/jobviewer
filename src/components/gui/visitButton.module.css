@@ -1,3 +1,18 @@
-.button {
+.btnStyle {
+    width:auto;
     border-radius: 10px;
+    background-color: #2dabf9;
+    border:1px solid #0b0e07;
+    padding: 5px 10px;
+    color: white;
+    text-shadow:0px 1px 0px #263666;
+    text-decoration: none;
 }
+
+.btnStyle:hover{
+    background-color:#0688fa;
+    color: black;
+    text-decoration: none;
+}
+
+

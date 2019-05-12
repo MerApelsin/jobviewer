@@ -4,6 +4,8 @@
     overflow: hidden;
     background-size: cover;
     background-position: 50% 50%;
+    margin-bottom: 10px;
+    border-radius: 10px;
 }
 
 .logoBlock{
@@ -16,8 +18,9 @@
 }
 
 .logo{
-    width: 50%;
+    width: 80%;
     border-radius: 50%;
+    border: 1px solid black;
 }
 
 .name{
@@ -31,10 +34,14 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 50%;
+    height: 100%;
+    text-align: left;    
 }
 
 .titleText
 {
-    font-size: 30px;
+    background-color: rgba(255,255,255,0.7);
+    font-size: 25px;
+    padding: 5px 10px;
+    border-radius: 10px;
 }

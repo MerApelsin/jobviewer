@@ -30,24 +30,23 @@ class FullCard extends React.Component{
         }
     }
     
-    //const currentAd = DataHandler.getFullAd(params.id);
     render(){
-        console.log(this.state);
-        const { match: { params } } = this.props;
         const { getComplete, error, workAd } = this.state;
         return (
             <Container className={style.container}>
+                {!getComplete &&
+                    <Row>
+                        <Col xs={1} className={style.spinnerCol}><Spinner/></Col>
+                    </Row>}
                 <Row>
                     {error !== '' && <p>{error}</p>}
-                    {!getComplete &&
-                        <Col><Spinner/></Col>}
                     {getComplete && error === '' &&
                     <Col>
-                        <p>Full card! {params.id}</p>
-                        <CompanyHeader/>
+                        <CompanyHeader headerDetails={workAd.company} title={workAd.workDetails.workTitle} />
                         <Details workDetails={workAd.workDetails}/>
-                        <CompanyInfo/>
-                        <LinkButtons/>
+                        <h4 className={style.companySection}>About the Company</h4>
+                        <CompanyInfo aboutCompany={workAd.company} contact={workAd.contact}/>
+                        <LinkButtons urls={workAd.urls}/>
                     </Col>}
                 </Row>
             </Container>
