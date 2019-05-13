@@ -15,7 +15,7 @@ src/components/data/dataHandler.js 's job is just to fetch and return adverts de
 
 Most time for this projects has gone to styling, which without a styleguide aint the best and so far isn't really all that mobile friendly. Works in Firefox and chrome, and almost completely in Edge!
 
-Leaving most of create-react-app's readme for some commands.
+Leaving most of create-react-app's readme for some commands - but don't forget to do npm install in the root folder before the commands down below.
 ***
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
