@@ -1,7 +1,7 @@
 
 ### Jobviewer - test project for Jobylon
 
-Basic *React* site that uses *react-bootstrap* and *react-router*. Site can be visited [at this Link](https://merapelsin.github.io/jobviewer/).
+Basic *React* site that uses *react-bootstrap* and *react-router*. Site can be visited [at this Link](https://merapelsin.github.io/jobviewer/). Design should be seen as an 'demo site'. There are issues with routing due to react-router/github pages.
 
 Root component being src/app.js, where react-bootstrap's most action is (aside from linking) that decides what component should be rendered based on url path. 
 
